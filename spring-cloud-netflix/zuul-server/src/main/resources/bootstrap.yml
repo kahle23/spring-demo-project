@@ -1,0 +1,37 @@
+server:
+  port: 8868
+
+spring:
+  application:
+    name: zuul-server
+  profiles:
+    active: default
+#  main:
+#    allow-bean-definition-overriding: true
+  cloud:
+    config:
+      enabled: false
+#      uri: http://127.0.0.1:8888
+      label: master
+#      name: eureka-server
+#      profile: default
+      fail-fast: true
+      discovery:
+        enabled: false
+        service-id: config-server
+
+eureka:
+  instance:
+    # Use the IP of this service when registering.
+    prefer-ip-address: true
+#    hostname: localhost
+#    ip-address: 127.0.0.1
+  client:
+    registry-fetch-interval-seconds: 10
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://root:root@127.0.0.1:8761/eureka/
+
+
+

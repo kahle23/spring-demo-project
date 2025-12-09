@@ -12,6 +12,7 @@ spring:
           # Placeholder "{application}" equivalently client "spring.cloud.config.name" or "spring.application.name"
           # Symbol "'" because of a yml file syntax problem
           search-paths: '{application}'
+          force-pull: true
           basedir: /temp/config
 #          username:
 #          password:

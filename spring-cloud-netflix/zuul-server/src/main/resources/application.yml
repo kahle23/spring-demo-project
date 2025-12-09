@@ -1,0 +1,48 @@
+zuul:
+  host:
+    time-to-live: -1
+    connect-timeout-millis: 30000
+    max-per-route-connections: 10000
+    max-total-connections: 5000
+    socket-timeout-millis: 60000
+  semaphore:
+    max-semaphores: 500
+  sensitive-headers:
+  prefix: /api
+  routes:
+    member:
+      path: /member/**
+      serviceId: member-soa
+#      url: https://admin.eggxiaoer.net/api/member/
+    trade:
+      path: /trade/**
+      serviceId: trade-soa
+#      url: https://admin.eggxiaoer.net/api/trade/
+    basic:
+      path: /basic/**
+      serviceId: basic-soa
+#      url: https://admin.eggxiaoer.net/api/basic/
+
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
+
+logging:
+  config: classpath:logback-spring.xml
+  home: /tmp/logs/
+  level:
+    root: info
+    com.netflix.discovery: off
+#    org.springframework.cloud: info
+
+
+
+

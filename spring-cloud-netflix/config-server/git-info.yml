@@ -3,7 +3,9 @@ spring:
     config:
       server:
         git:
-          uri: git@git.host:user/config.git
+          uri: git@github.com:kahle23/spring-demo-project.git
+          search-paths: 'spring-cloud-netflix/config-repo/{application}'
+          force-pull: true
           ignore-local-ssh-settings: true
           private-key: |
                          -----BEGIN RSA PRIVATE KEY-----

@@ -8,13 +8,13 @@
     <version>1.0.0.RELEASE</version>
     <packaging>jar</packaging>
     <name>Business Web</name>
-    <url>https://github.com/kahle23/spring-cloud-component</url>
+    <url>https://github.com/kahle23/spring-demo-project</url>
     <description>Business web project.</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.1.RELEASE</version>
+        <version>2.0.9.RELEASE</version>
         <relativePath/>
     </parent>
 

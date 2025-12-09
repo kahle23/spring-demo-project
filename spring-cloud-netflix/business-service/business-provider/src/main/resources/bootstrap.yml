@@ -6,8 +6,8 @@ spring:
     name: business-service
   profiles:
     active: dev
-  main:
-    allow-bean-definition-overriding: true
+#  main:
+#    allow-bean-definition-overriding: true
   cloud:
     config:
       enabled: false

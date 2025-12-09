@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.kahle23</groupId>
-    <artifactId>config-server</artifactId>
+    <artifactId>zuul-server</artifactId>
     <version>0.0.1.beta</version>
     <packaging>jar</packaging>
-    <name>Config Server</name>
-    <url>https://github.com/kahle23/spring-demo-project</url>
-    <description>Config server project.</description>
+    <name>Zuul Server</name>
+	<url>https://github.com/kahle23/spring-demo-project</url>
+    <description>Spring Cloud Netflix Zuul Server</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -20,9 +20,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>server.config.Application</start-class>
+        <start-class>server.zuul.Application</start-class>
         <java.version>1.7</java.version>
-        <!--<docker.image.prefix>springcloud</docker.image.prefix>-->
     </properties>
 
     <dependencies>
@@ -35,30 +34,18 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
-        <!-- You need to be running rabbitmq locally. This is to support broadcast of config changes to client apps via Spring Cloud Stream. If you want to play and don't need that feature just comment out the monitor and rabbitmq dependencies. -->
-
-        <!--<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-monitor</artifactId>
-        </dependency>-->
-
-        <!--<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
-        </dependency>-->
 
     </dependencies>
 
@@ -159,23 +146,6 @@
                     <skipTests>true</skipTests>
                 </configuration>
             </plugin>
-
-            <!--<plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.2.3</version>
-                <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-                    <dockerDirectory>src/main/docker</dockerDirectory>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-                </configuration>
-            </plugin>-->
 
         </plugins>
 

@@ -41,12 +41,21 @@ logging:
 #    org.springframework.cloud: info
 
 feign:
+  client:
+    config:
+      default:
+        connect-timeout: 2000
+        read-timeout: 2000
   httpclient:
     enabled: true
     max-connections: 2000
     max-connections-per-route: 300
   hystrix:
     enabled: true
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
 
 
 

@@ -8,14 +8,14 @@
     <version>0.0.1.beta</version>
     <packaging>jar</packaging>
     <name>Eureka Server</name>
-    <url>https://github.com/kahle23/spring-cloud-component</url>
+    <url>https://github.com/kahle23/spring-demo-project</url>
     <description>Eureka server project.</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.1.RELEASE</version>
-        <!--<relativePath/>-->
+        <version>2.0.9.RELEASE</version>
+        <relativePath/>
     </parent>
 
     <properties>
