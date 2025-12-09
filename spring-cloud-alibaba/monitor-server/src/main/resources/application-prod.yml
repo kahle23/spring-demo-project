@@ -1,0 +1,30 @@
+
+spring:
+  # 登录的用户和密码
+  security:
+    user:
+      name: admin
+      password: admin
+  boot:
+    admin:
+      ui:
+        title: Monitor Server
+        login-icon: "assets/img/favicon.png"
+        favicon: "assets/img/favicon.png"
+        favicon-danger: "assets/img/favicon.png"
+        brand: "<img src=\"assets/img/favicon.png\"><span>Monitor Server</span>"
+        # 不显示自己的监控信息
+#      discovery:
+#        ignored-services: ${spring.application.name}
+  cloud:
+    nacos:
+      discovery:
+        enabled: false
+        server-addr: 127.0.0.1:8849
+        namespace: 11111111-2222-3333-4444-555555555
+
+
+
+
+
+
