@@ -1,0 +1,22 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+  profiles:
+    active: default
+  cloud:
+    config:
+      enabled: false
+#      uri: http://127.0.0.1:8888
+      label: master
+#      name: eureka-server
+#      profile: default
+      fail-fast: true
+      discovery:
+        enabled: false
+        service-id: config-server
+
+
+

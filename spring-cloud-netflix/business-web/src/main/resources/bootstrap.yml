@@ -1,0 +1,58 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: business-web
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    config:
+      enabled: false
+
+eureka:
+  instance:
+    # Use the IP of this service when registering.
+    prefer-ip-address: true
+#    hostname: localhost
+#    ip-address: 127.0.0.1
+  client:
+    registry-fetch-interval-seconds: 10
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://root:root@127.0.0.1:8761/eureka/
+
+---
+spring:
+  profiles: dev
+  cloud:
+    config:
+      enabled: false
+
+---
+spring:
+  profiles: test
+  cloud:
+    config:
+      enabled: true
+#      uri: http://127.0.0.1:8888
+      label: master
+#      name: business-web
+#      profile: test
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config-server
+      username: root
+      password: root
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:root@127.0.0.1:8761/eureka,http://root:root@127.0.0.2:8761/eureka,http://root:root@127.0.0.3:8761/eureka
+
+
+

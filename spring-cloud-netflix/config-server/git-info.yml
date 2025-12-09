@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@git.host:user/config.git
+          ignore-local-ssh-settings: true
+          private-key: |
+                         -----BEGIN RSA PRIVATE KEY-----
+                         -----END RSA PRIVATE KEY-----
+
+
+

@@ -1,0 +1,30 @@
+spring:
+  security:
+    user:
+      name: root
+      password: root
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://git/config
+          # Profiles for multiple services are under the same repository
+          # Placeholder "{application}" equivalently client "spring.cloud.config.name" or "spring.application.name"
+          # Symbol "'" because of a yml file syntax problem
+          search-paths: '{application}'
+          basedir: /temp/config
+#          username:
+#          password:
+#          ignore-local-ssh-settings: true
+#          private-key:
+
+logging:
+  config: classpath:logback-spring.xml
+  home: /tmp/logs/
+  level:
+    root: info
+    com.netflix.discovery: off
+#    org.springframework.cloud: info
+
+
+

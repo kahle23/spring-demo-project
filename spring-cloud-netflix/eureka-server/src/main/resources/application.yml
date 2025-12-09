@@ -1,0 +1,31 @@
+eureka:
+  instance:
+    # Use the IP of this service when registering.
+    prefer-ip-address: true
+#    hostname: localhost
+#    ip-address: 127.0.0.1
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    registry-fetch-interval-seconds: 10
+    service-url:
+      defaultZone: http://root:root@127.0.0.1:8762/eureka/
+
+spring:
+  security:
+    user:
+      name: root
+      password: root
+
+logging:
+  config: classpath:logback-spring.xml
+  home: /tmp/logs/
+  level:
+    root: info
+    com.netflix.discovery: off
+#    org.springframework.cloud: info
+
+
+
